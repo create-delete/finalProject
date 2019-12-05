@@ -16,7 +16,8 @@ public class PrintToTheConsole {
                 "3. Add co-worker\n" +
                 "4. Add device\n" +
                 "5. Switch device by co-worker\n" +
-                "6. Switch department by co-worker");
+                "6. Switch department by co-worker\n" +
+                "7. Exit program");
     }
 
     public void switchDialog() {

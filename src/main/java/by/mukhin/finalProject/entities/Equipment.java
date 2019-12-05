@@ -47,4 +47,6 @@ public class Equipment {
             return false;
         }
     }
+
+
 }

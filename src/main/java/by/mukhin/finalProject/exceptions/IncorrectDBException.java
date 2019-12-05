@@ -1,4 +1,4 @@
-package by.mukhin.finalProject.services;
+package by.mukhin.finalProject.exceptions;
 
 public class IncorrectDBException extends RuntimeException {
     public IncorrectDBException(String db){
