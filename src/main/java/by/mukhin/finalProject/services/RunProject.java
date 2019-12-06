@@ -9,15 +9,15 @@ public class RunProject {
     private int choise = 0;
     private Functions functions = new Functions();
 
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public void runProject(){
+    public void runProject() {
+
         while (true) {
             PrintToTheConsole.printStartMessege();
 
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            try {
                 choise = Integer.parseInt(reader.readLine());
-
-
             /*"1. Show all co-workers\n" +
               "2. Show all devices\n" +
               "3. Add co-worker\n" +
@@ -28,13 +28,13 @@ public class RunProject {
                 switch (choise) {
                     case 1:
                         functions.showCoWorkers();
-                        choise = 0;
                         break;
                     case 2:
                         functions.showAllDevices();
-                        choise = 0;
                         break;
                     case 3:
+                        functions.addCoWorker();
+                        break;
                     case 4:
                     case 5:
                     case 6:
@@ -45,11 +45,10 @@ public class RunProject {
                         break;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Incorrect input. Try again.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            break;
         }
     }
 }

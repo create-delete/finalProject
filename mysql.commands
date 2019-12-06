@@ -1,3 +1,12 @@
+create database inventory;
+use inventory;
+create table owner(
+	id int auto_increment primary key,
+    name varchar(64),
+    id_department int,
+    FOREIGN KEY (id_department) REFERENCES departments (id)
+);
+
 create table departments (
 	id int auto_increment primary key,
     name varchar(64)

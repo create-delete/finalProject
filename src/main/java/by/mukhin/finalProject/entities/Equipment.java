@@ -22,8 +22,7 @@ public class Equipment {
     public void repair(boolean to1, boolean to2){
         if(to2){
             this.lifeTimeMonth += 6;
-        }
-        if(to1){
+        } else if(to1){
             this.lifeTimeMonth += 12;
         }
     }
