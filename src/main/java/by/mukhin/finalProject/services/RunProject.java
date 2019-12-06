@@ -10,16 +10,13 @@ public class RunProject {
     private Functions functions = new Functions();
 
 
-
     public void runProject(){
-        while (true){
+        while (true) {
             PrintToTheConsole.printStartMessege();
 
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));){
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
                 choise = Integer.parseInt(reader.readLine());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
 
             /*"1. Show all co-workers\n" +
               "2. Show all devices\n" +
@@ -28,28 +25,31 @@ public class RunProject {
               "5. Switch device by co-worker\n" +
               "6. Switch department by co-worker");
                7. Exit*/
-            switch (choise){
-                case 1 :
-                    try {
+                switch (choise) {
+                    case 1:
                         functions.showCoWorkers();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                    break;
-                case 2 :
-                    try {
+                        choise = 0;
+                        break;
+                    case 2:
                         functions.showAllDevices();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                case 3 :
-                case 4 :
-                case 5 :
-                case 6 :
-                case 7 : return;
-                default:
-                    System.out.println("Incorrect input. Try again."); break;
+                        choise = 0;
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                        return;
+                    default:
+                        System.out.println("Incorrect input. Try again.");
+                        break;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
+            break;
         }
     }
 }

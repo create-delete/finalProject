@@ -1,0 +1,48 @@
+create table departments (
+	id int auto_increment primary key,
+    name varchar(64)
+);
+
+insert into departments (name) values
+	('IT'),
+    ('Active_sales'),
+    ('buh'),
+    ('Administration');
+
+insert into owner (name, id_department) values
+	('Maksim Kolbun', 1),
+    ('Andrey Andysha', 4),
+    ('Kasatka', 3);
+
+select * from owner order by id_department;
+select * from departments;
+
+create table equipment (
+	id int auto_increment primary key,
+    type varchar(64) not null,
+    id_owner int,
+    purchase_date date,
+    lifetime_month int,
+    FOREIGN KEY (id_owner) REFERENCES owner (id)
+);
+
+insert into equipment (type, id_owner, purchase_date, lifetime_month) values
+ ('computer', 2, now(), 24),
+ ('phone', 3, now(), 12),
+ ('printer', 2, now(), 6);
+
+ insert into equipment (type, id_owner, purchase_date, lifetime_month) value ('phone', 3, '2019-01-02', 12);
+
+alter table owner add constraint foreign key (id_department) references departments (id);
+
+create table parts (
+	id int primary key auto_increment,
+    cost int not null,
+    id_equip int,
+    description varchar(128),
+    FOREIGN KEY (id_equip) REFERENCES equipment (id)
+);
+
+select e.id, e.type, o.name from equipment e join owner o where (e.id_owner = o.id);
+select * from owner left join equipment using(id);
+select * from equipment;
