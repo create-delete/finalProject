@@ -1,5 +1,8 @@
 package by.mukhin.finalProject.services;
 
+/*
+Какой то баг с записью в базу. Зацикливается while(true) в 19 строке. И выпадает в вечны IOException
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,6 +39,8 @@ public class RunProject {
                         functions.addCoWorker();
                         break;
                     case 4:
+                        functions.addDevice();
+                        break;
                     case 5:
                     case 6:
                     case 7:
