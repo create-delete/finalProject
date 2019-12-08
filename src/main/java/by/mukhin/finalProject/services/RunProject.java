@@ -9,12 +9,11 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 
 public class RunProject {
-    private int choise = 0;
-    private Functions functions = new Functions();
 
-    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-    public void runProject() {
+    public void runProject(){
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int choise = 0;
+        Functions functions = new Functions();
 
         while (true) {
             PrintToTheConsole.printStartMessege();
@@ -36,21 +35,27 @@ public class RunProject {
                         functions.showAllDevices();
                         break;
                     case 3:
-                        functions.addCoWorker();
+                        functions.addCoWorker(reader);
                         break;
                     case 4:
-                        functions.addDevice();
+                        functions.addDevice(reader);
                         break;
                     case 5:
+                        functions.changeOwnerToEquipment(reader);
+                        break;
                     case 6:
+                        functions.changeDepartmentToCoWorker(reader);
+                        break;
                     case 7:
+                        reader.close();
                         return;
                     default:
                         System.out.println("Incorrect input. Try again.");
                         break;
                 }
             } catch (IOException e) {
-                System.out.println("Incorrect input. Try again.");
+                e.printStackTrace();
+                //System.out.println("Incorrect input. Try again.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
