@@ -2,7 +2,7 @@ package by.mukhin.finalProject.services;
 
 public class PrintToTheConsole {
     public static void printDepartmentList() {
-        System.out.println("Choose department:\n1. IT.\n2. Active sales.\n3.Bookkeeper.\n4. Administratoion.");
+        System.out.println("Choose department:\n1. IT.\n2. Active sales.\n3. Bookkeeper.\n4. Administratoion.");
     }
 
     public static void printStartMessege() {

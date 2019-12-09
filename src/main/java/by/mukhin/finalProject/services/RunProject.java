@@ -54,8 +54,7 @@ public class RunProject {
                         break;
                 }
             } catch (IOException e) {
-                e.printStackTrace();
-                //System.out.println("Incorrect input. Try again.");
+                System.out.println("Incorrect input. Try again.");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
